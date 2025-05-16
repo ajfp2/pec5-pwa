@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$pwa-blanco: #fff;
+$pwa-body: hsl(0, 0%, 98%);
+$pwa-negro: #000;
+$pwa-links: hsl(0, 0%, 25%);
+$pwa-links-hover: hsl(282, 81%, 38%);
+
+html {
+    --mat-divider-color: rgba(0, 0, 0, 0.25);
+    --mdc-list-list-item-label-text-color: $pwa-links;
+    --mdc-list-list-item-leading-icon-color: $pwa-links
+    --mdc-list-list-item-hover-label-text-color: $pwa-links-hover;
+    --mdc-list-list-item-hover-leading-icon-color: $pwa-links-hover;
+
+    // Container -> Todo Barra lateral y contenido
+    --mat-sidenav-container-divider-color: rgba(0, 0, 0, 0.12);
+    --mat-sidenav-container-background-color: $pwa-blanco;
+    --mat-sidenav-container-text-color: $pwa-links;
+
+
+    --mat-sidenav-content-background-color: $pwa-body;
+    --mat-sidenav-content-text-color: $pwa-negro;
+    
+    --mat-sidenav-scrim-color: rgba(189, 189, 189, 0.6);
+}
