@@ -27,3 +27,10 @@ html {
     
     --mat-sidenav-scrim-color: rgba(189, 189, 189, 0.6);
 }
+
+.grid-cards {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  padding: 16px;
+}

@@ -5,7 +5,7 @@ import { CategoryService } from '../../services/category.service';
 @Component({
   selector: 'app-categories-list',
   templateUrl: './categories-list.component.html',
-  styleUrl: './categories-list.component.scss'
+  styleUrl: './categories-list.component.scss',
 })
 export class CategoriesListComponent {
 

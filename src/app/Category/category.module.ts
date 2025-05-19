@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CategoriesListComponent } from './components/categories-list/categories-list.component';
 import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { SharedModule } from "../shared/shared.module";
 
 
 
@@ -16,7 +17,8 @@ import { MatDividerModule } from '@angular/material/divider';
   imports: [
     CommonModule,
     MatDividerModule,
-    HttpClientModule
-  ]
+    HttpClientModule,
+    SharedModule
+]
 })
 export class CategoryModule { }
