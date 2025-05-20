@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { FormatDatePipe } from './Pipes/format-date.pipe';
 import { CardCategoryComponent } from './components/card-category/card-category.component';
+import { DefaultImagePipe } from './Pipes/default-image.pipe';
 
 
 
@@ -30,7 +31,8 @@ import { CardCategoryComponent } from './components/card-category/card-category.
     CardComponent,
     GridComponent,
     FormatDatePipe,
-    CardCategoryComponent
+    CardCategoryComponent,
+    DefaultImagePipe
   ],
   imports: [
     CommonModule,

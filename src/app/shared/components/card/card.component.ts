@@ -15,7 +15,7 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
   hover = false;
-  showButtons = false;
+
   @Input() item: any = {};
   @Input() img: string = '';
 
