@@ -33,8 +33,6 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     MatSliderModule,
     MatInputModule
-
-
-]
+  ]
 })
 export class ProductModule { }

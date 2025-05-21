@@ -13,7 +13,7 @@
                 <div class="col-6">
                     <div class="product-image">
                         <div class="product-image-main">
-                            <img [src]='imageMain | defaultImage' (error)="imageMain = '../../../assets/default.avif'" alt="image detail producto" id="product-main-image">
+                            <img [src]='imageMain | defaultImage' (error)="imageMain = '../../../assets/images/default.avif'" alt="image detail producto" id="product-main-image">
                         </div>
                         <div class="product-image-slider">
                             <img [src]='img' alt="imagen miniatura" class="image-list" *ngFor="let img of product.images" (click)="changeMainImage(img);">
@@ -26,12 +26,8 @@
                             <h2>{{ product.title }}</h2>
                         </div>
                         <div class="product-rating">
-                            <span><mat-icon>star</mat-icon></span>
-                            <span><mat-icon>star</mat-icon></span>
-                            <span><mat-icon>star</mat-icon></span>
-                            <span><mat-icon>star_half</mat-icon></span>
-                            <span><mat-icon>star_border</mat-icon></span>
-                            <span class="review">({{ valor_slider }} Puntos)</span>
+                            <app-star-rating [rating]="valor_rating"></app-star-rating>
+                            <span class="review">({{ valor_rating }} / 5 Rating)</span>
                         </div>
                         <div class="product-price">
                             <span class="offer-price">{{ product.price }} €</span>
@@ -52,6 +48,8 @@
                         <div class="product-details">
                             <h3>Descripción</h3>
                             <p>{{ product.description }}</p>
+                            <h3>Añadido a la tienda:<small style="float: right;">{{ product.creationAt | formatDate:3 }}</small></h3>
+                            
                         </div>
 
                         <div class="product-category">
@@ -63,8 +61,8 @@
                             <mat-slider class="slider-margin"
                                 [max]="100"
                                 [min]="0"
-                                [step]="step"
-                                [discrete]="thumbLabel">
+                                [step]="1"
+                                [discrete]="true">
                                 <input matSliderThumb [value]="valor_slider" #slider>
                             </mat-slider>
                             <button mat-raised-button color="accent" (click)="calcularValoracion(+slider.value);">Enviar</button>

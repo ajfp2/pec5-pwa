@@ -22,6 +22,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     SpinnerComponent,
     FormatDatePipe,
     CardCategoryComponent,
-    DefaultImagePipe
+    DefaultImagePipe,
+    StarRatingComponent
   ],
   imports: [
     CommonModule,
@@ -48,7 +50,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     RouterOutlet
   ],
   exports: [
-    NavbarComponent, CardComponent, CardCategoryComponent, DefaultImagePipe, FormatDatePipe
+    NavbarComponent, CardComponent, CardCategoryComponent, DefaultImagePipe, FormatDatePipe, StarRatingComponent
   ]
 })
 

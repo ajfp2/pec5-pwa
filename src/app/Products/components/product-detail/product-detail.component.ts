@@ -18,11 +18,8 @@ export class ProductDetailComponent implements OnInit{
   public imageMain: string;
 
   //slider
-  max = 100;
-  min = 0;
-  step = 1;
-  thumbLabel = true;
-  valor_slider = 50;
+  public valor_slider = 50;
+  public valor_rating = 0;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private ps: ProductService, private loc: Location) {
     this.idProduct = this.activatedRoute.snapshot.paramMap.get('id');
@@ -33,7 +30,6 @@ export class ProductDetailComponent implements OnInit{
   ngOnInit(): void {
     if(this.idProduct){
       this.ps.getProductById(this.idProduct).subscribe(prod => {
-        console.log(prod);
         this.product = prod; 
         this.imageMain = prod.images[0];
       });
@@ -51,10 +47,7 @@ export class ProductDetailComponent implements OnInit{
 
   calcularValoracion(valor: number) {
     console.log("Estrellas ", (valor / 20));
-    
-
-
-    this.valor_slider = valor;
+    this.valor_rating = (valor / 20);
   }
 
   volver() {

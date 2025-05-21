@@ -5,6 +5,7 @@ import { CategoriesListComponent } from './components/categories-list/categories
 import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { SharedModule } from "../shared/shared.module";
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -18,6 +19,7 @@ import { SharedModule } from "../shared/shared.module";
     CommonModule,
     MatDividerModule,
     HttpClientModule,
+    MatCardModule,
     SharedModule
 ]
 })
