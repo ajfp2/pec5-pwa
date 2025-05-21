@@ -14,7 +14,11 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  getCProduts(): Observable<ProductDTO[]> {
+  getProduts(): Observable<ProductDTO[]> {
     return this.http.get<ProductDTO[]>(url + 'products');
+  }
+
+  getProductById(id: string): Observable<ProductDTO> {
+    return this.http.get<ProductDTO>( `${url}products/${id}`);
   }
 }

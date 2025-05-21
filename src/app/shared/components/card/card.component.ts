@@ -1,5 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, Input } from '@angular/core';
+import { ProductCardDto } from '../../models/product-card.dto';
+import { CategoryDTO } from '../../../Category/models/category.dto';
 
 @Component({
   selector: 'app-card',
@@ -16,7 +18,16 @@ import { Component, Input } from '@angular/core';
 export class CardComponent {
   hover = false;
 
-  @Input() item: any = {};
+  @Input() item: ProductCardDto = {
+    id: '',
+    title: '',
+    slug: '',
+    price: 0,
+    description: '',
+    category: new CategoryDTO('', '', ''),
+    creationAt: new Date(),
+    images: []
+  };
   @Input() img: string = '';
 
 }

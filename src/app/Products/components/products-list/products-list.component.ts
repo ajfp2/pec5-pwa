@@ -18,7 +18,7 @@ export class ProductsListComponent {
   }
 
   private loadProductos(): void{
-    this.ps.getCProduts().subscribe( resp => {
+    this.ps.getProduts().subscribe( resp => {
       console.log("Prdos", resp);
       
       this.productos = resp;

@@ -26,6 +26,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-## Tienda de productos FAKE API
-Api para ecommerce fake
+## API's y Código Externo
+### Api para ecommerce fake
 URL: https://fakeapi.platzi.com/
+### Diseño página ficha producto
+URL: https://github.com/thecodingscape/e-commerce-Product-Page-design-using-Pure-CSS-and-Vanilla-Javascript.git

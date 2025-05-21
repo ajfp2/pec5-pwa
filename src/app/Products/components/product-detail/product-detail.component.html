@@ -1,4 +1,76 @@
-<h1>Ficha Producto</h1>
-<button style="float: right;">Volver</button>
+<h1>
+    Ficha Producto
+    <button mat-flat-button style="float: right;" (click)="volver();">
+        <mat-icon>arrow_back</mat-icon>
+        Volver
+    </button>
+</h1>
+
 <mat-divider></mat-divider>
-<p>page-product-detail works!</p>
+ <div class="container-detail">
+        <div class="single-product">
+            <div class="row">
+                <div class="col-6">
+                    <div class="product-image">
+                        <div class="product-image-main">
+                            <img [src]='imageMain | defaultImage' (error)="imageMain = '../../../assets/default.avif'" alt="image detail producto" id="product-main-image">
+                        </div>
+                        <div class="product-image-slider">
+                            <img [src]='img' alt="imagen miniatura" class="image-list" *ngFor="let img of product.images" (click)="changeMainImage(img);">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="product">
+                        <div class="product-title">
+                            <h2>{{ product.title }}</h2>
+                        </div>
+                        <div class="product-rating">
+                            <span><mat-icon>star</mat-icon></span>
+                            <span><mat-icon>star</mat-icon></span>
+                            <span><mat-icon>star</mat-icon></span>
+                            <span><mat-icon>star_half</mat-icon></span>
+                            <span><mat-icon>star_border</mat-icon></span>
+                            <span class="review">({{ valor_slider }} Puntos)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="offer-price">{{ product.price }} €</span>
+                            <span class="sale-price">{{ calcularIncremento(product.price) }} €</span>
+                        </div>
+
+                        <div class="product-btn-group">
+                            <button mat-flat-button color="primary">
+                                <mat-icon>add_shopping_cart</mat-icon>
+                                Añadir al Carrito
+                            </button>
+                            <button mat-flat-button>
+                                <mat-icon>favorite</mat-icon>
+                                Añadir a Lista de Deseos
+                            </button>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="product-details">
+                            <h3>Descripción</h3>
+                            <p>{{ product.description }}</p>
+                        </div>
+
+                        <div class="product-category">
+                            <h4>Categoría:</h4>
+                            <div class="category-layout">
+                                <button mat-raised-button>{{ product.category.name }}</button>
+                            </div>
+                            <h4>Valorar el Producto (0-100): {{slider.value}} Puntos</h4>
+                            <mat-slider class="slider-margin"
+                                [max]="100"
+                                [min]="0"
+                                [step]="step"
+                                [discrete]="thumbLabel">
+                                <input matSliderThumb [value]="valor_slider" #slider>
+                            </mat-slider>
+                            <button mat-raised-button color="accent" (click)="calcularValoracion(+slider.value);">Enviar</button>
+                        </div>                                 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

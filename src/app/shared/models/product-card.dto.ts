@@ -9,5 +9,6 @@ export interface ProductCardDto{
     price: number;
     description: string;
     category: CategoryDTO;
+    creationAt: Date;
     images: string[];
 }

@@ -7,6 +7,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { SharedModule } from './shared/shared.module';
 import { ProductModule } from './Products/product.module';
 import { CategoryModule } from './Category/category.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoaderInterceptor } from './shared/services/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,13 @@ import { CategoryModule } from './Category/category.module';
     CategoryModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true
+
+    }
   ],
   bootstrap: [AppComponent]
 })

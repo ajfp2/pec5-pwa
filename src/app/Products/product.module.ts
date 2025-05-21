@@ -10,6 +10,10 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 // Angular Material
 import { MatDividerModule } from '@angular/material/divider';
 import { SharedModule } from "../shared/shared.module";
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -24,7 +28,13 @@ import { SharedModule } from "../shared/shared.module";
     CommonModule,
     HttpClientModule,
     MatDividerModule,
-    SharedModule
+    SharedModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSliderModule,
+    MatInputModule
+
+
 ]
 })
 export class ProductModule { }
