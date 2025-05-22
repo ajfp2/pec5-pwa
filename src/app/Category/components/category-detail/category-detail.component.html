@@ -1,1 +1,23 @@
-<p>Category detauls works!</p>
+<h1>
+    Detalle Categoría
+    <button mat-flat-button style="float: right;" (click)="volver();">
+        <mat-icon>arrow_back</mat-icon>
+        Volver
+    </button>
+</h1>
+<mat-divider></mat-divider>
+
+
+<div class="grid-category">
+    <div class="image">
+        <img [src]="categoria.image | defaultImage" alt="Imagen categoria">
+    </div>
+
+    <div class="datos">
+        <h2><span class="label">Categoría:</span> {{ categoria.name }}</h2>
+        <h2><span class="label">Slug:</span> {{ categoria.slug }}</h2>
+        <h2><span class="label">ID:</span> {{ categoria.id }}</h2>
+        <h2><span class="label">Creado:</span> {{ categoria.name }}</h2>
+        <h2><span class="label">Actualizado:</span> {{ categoria.name }}</h2>
+    </div>
+</div>
