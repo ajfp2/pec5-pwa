@@ -3,6 +3,7 @@ import { CategoryDTO } from '../../models/category.dto';
 import { CategoryService } from '../../services/category.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { ProductDTO } from '../../../Products/models/product.dto';
 
 @Component({
   selector: 'app-category-detail',
@@ -12,14 +13,23 @@ import { Location } from '@angular/common';
 export class CategoryDetailComponent implements OnInit{
   categoria: CategoryDTO;
   idCat: string | null;
+  prodsCat: ProductDTO[];
+
   constructor(private cs: CategoryService, private actRoute: ActivatedRoute, private loc: Location) {
     this.categoria = new CategoryDTO('', '', '');
     this.idCat = this.actRoute.snapshot.paramMap.get('id');
+    this.prodsCat = new Array<ProductDTO>();
   }
 
   ngOnInit(): void {
-      if(this.idCat) this.cs.getCategoryById(this.idCat).subscribe(resp =>{ console.log(resp);
-       this.categoria = resp;});
+      if(this.idCat) {
+        this.cs.getCategoryById(this.idCat).subscribe(resp =>{
+          this.categoria = resp;
+        });
+        this.cs.getProductsCategoryById(this.idCat).subscribe( resp => {
+          this.prodsCat = resp;
+        });
+      }
   }
 
   volver() {

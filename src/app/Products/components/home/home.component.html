@@ -1,3 +1,33 @@
 <h1>Dashboard</h1>
 <mat-divider></mat-divider>
-<p>page-dashboard works!</p>
+
+<div class="dashboard-container">
+    
+    <div class="customers">
+        <h2>Mejores Clientes</h2>
+        <mat-list>
+            @for (cli of customers; track cli) {
+                <mat-list-item>
+                    <mat-icon matListItemIcon>folder</mat-icon>
+                    <div matListItemTitle>{{cli.name}}</div>
+                    <div matListItemLine>{{cli.role}}</div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            }
+        </mat-list>
+    </div>
+
+
+    <div class="topVentas">
+        <h2>Productos desde {{ valor1 }}€ hasta {{ valor2}}€</h2>
+        <div class="grid-cards">
+            <div *ngFor="let pr of prodTopVentas;">
+                <app-card
+                [item]="pr"
+                [img]="pr.images[0]"
+                ></app-card>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -21,4 +21,12 @@ export class ProductService {
   getProductById(id: string): Observable<ProductDTO> {
     return this.http.get<ProductDTO>( `${url}products/${id}`);
   }
+
+  getProductsPrice(v1: number, v2: number): Observable<ProductDTO[]> {
+    return this.http.get<ProductDTO[]>( `${url}products/?price_min=${v1}&price_max=${v2}`);
+  }
+
+  getMostCustomer(){
+    return this.http.get<ProductDTO[]>(url + 'users');    
+  }
 }

@@ -21,3 +21,14 @@
         <h2><span class="label">Actualizado:</span> {{ categoria.name }}</h2>
     </div>
 </div>
+
+<h2>Productos de la Categoría- {{ categoria.name }}</h2>
+<mat-divider></mat-divider>
+<div class="grid-cards">
+  <div *ngFor="let pr of prodsCat;">
+    <app-card
+      [item]="pr"
+      [img]="pr.images[0]"
+    ></app-card>
+  </div>
+</div>

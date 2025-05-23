@@ -2,7 +2,7 @@
 <mat-divider></mat-divider>
 
 
-<div class="grid-cards" [@cardAnimations]>
+<div class="grid-cards">
   <div *ngFor="let cat of categorias; let i = index;">
       <app-card-category [item]="cat"></app-card-category>
   </div>
