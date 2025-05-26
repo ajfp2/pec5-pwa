@@ -25,6 +25,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
+import { GridCategoryComponent } from './components/grid-category/grid-category.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { MatTableModule } from '@angular/material/table';
     FormatDatePipe,
     CardCategoryComponent,
     DefaultImagePipe,
-    StarRatingComponent
+    StarRatingComponent,
+    GridCategoryComponent
   ],
   imports: [
     CommonModule,
@@ -55,7 +57,7 @@ import { MatTableModule } from '@angular/material/table';
     RouterOutlet
   ],
   exports: [
-    NavbarComponent, CardComponent, GridComponent, CardCategoryComponent, DefaultImagePipe, FormatDatePipe, StarRatingComponent
+    NavbarComponent, CardComponent, GridComponent, CardCategoryComponent, GridCategoryComponent, DefaultImagePipe, FormatDatePipe, StarRatingComponent
   ]
 })
 

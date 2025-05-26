@@ -24,11 +24,14 @@
 
 <h2>Productos de la Categoría- {{ categoria.name }}</h2>
 <mat-divider></mat-divider>
-<div class="grid-cards">
+<div class="grid-cards" *ngIf="ls.getMode() == 'card'">
   <div *ngFor="let pr of prodsCat;">
     <app-card
       [item]="pr"
       [img]="pr.images[0]"
     ></app-card>
   </div>
+</div>
+<div class="table-products" *ngIf="ls.getMode() == 'table'">
+  <app-grid [item]="prodsCat"></app-grid>            
 </div>

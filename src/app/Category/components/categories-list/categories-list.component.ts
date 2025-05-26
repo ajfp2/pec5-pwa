@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CategoryDTO } from '../../models/category.dto';
 import { CategoryService } from '../../services/category.service';
+import { LoaderService } from '../../../shared/services/loader.service';
 
 @Component({
   selector: 'app-categories-list',
@@ -11,7 +12,7 @@ export class CategoriesListComponent {
 
   categorias: CategoryDTO[];
 
-  constructor(private catService: CategoryService) {
+  constructor(private catService: CategoryService, public ls: LoaderService) {
     this.categorias = new Array<CategoryDTO>();
     this.loadCategorias();
   }

@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { ProductDTO } from '../../models/product.dto';
+import { LoaderService } from '../../../shared/services/loader.service';
 
 @Component({
   selector: 'app-products-list',
@@ -12,7 +13,7 @@ export class ProductsListComponent {
 
   productos: ProductDTO[];
   
-  constructor(private ps: ProductService){
+  constructor(private ps: ProductService, public ls: LoaderService){
     this.productos = new Array<ProductDTO>();
     this.loadProductos();
   }
