@@ -5,12 +5,14 @@
     <span>UOC ECOMMERCE PWA</span>
   <span class="example-spacer"></span>
 
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" title="Card Mode">
-    <mat-icon>apps</mat-icon>
+  <button mat-button [matMenuTriggerFor]="viewMode" title="Select a view mode">
+    Vista: {{ mode }}
+    <mat-icon role="img" class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">arrow_drop_down</mat-icon>
   </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" title="Table Mode">
-    <mat-icon>view_list</mat-icon>
-  </button>
+  <mat-menu #viewMode="matMenu">
+    <button mat-menu-item (click)="changeMode('card');"><mat-icon>apps</mat-icon> Card View</button>
+    <button mat-menu-item (click)="changeMode('table');"><mat-icon>list</mat-icon>Table View</button>
+  </mat-menu>
 </mat-toolbar>
 
 <mat-sidenav-container>

@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class LoaderService {
 
+  private viewMode = 'table';//table, card
   private loading = false;
   constructor() { }
 
@@ -14,5 +15,13 @@ export class LoaderService {
 
   getLoading(): boolean {
     return this.loading;
+  }
+
+  setMode(load: string): void {
+    this.viewMode = load;
+  }
+
+  getMode(): string {
+    return this.viewMode;
   }
 }

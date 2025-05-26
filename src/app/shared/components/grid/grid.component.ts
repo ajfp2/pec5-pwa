@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProductDTO } from '../../../Products/models/product.dto';
+import { CategoryDTO } from '../../../Category/models/category.dto';
 
 @Component({
   selector: 'app-grid',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './grid.component.scss'
 })
 export class GridComponent {
-
+    prodTableColums: string[] =["id", "title", "price", "category", "actions"];
+    @Input() item: ProductDTO[] = new Array();
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoaderService } from '../../services/loader.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+
+  public mode: string;
   public navItems = [
     {
       title: 'Dashboard',
@@ -25,9 +28,16 @@ export class NavbarComponent {
     }
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private ls: LoaderService) {
+    this.mode = this.ls.getMode();
+  }
 
   navigateTo(ruta: string): void {
     this.router.navigateByUrl(ruta);
+  }
+
+  changeMode(mode: string): void {
+    this.mode = mode;
+    this.ls.setMode(mode);
   }
 }

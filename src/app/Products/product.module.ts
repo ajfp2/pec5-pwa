@@ -13,7 +13,7 @@ import { SharedModule } from "../shared/shared.module";
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 
 
