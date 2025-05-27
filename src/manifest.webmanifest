@@ -1,7 +1,7 @@
 {
   "name": "Ecommerce-pwa",
   "short_name": "Ecommerce-pwa",
-  "theme_color": "#1976d2",
+  "theme_color": "#7c1fa5",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
