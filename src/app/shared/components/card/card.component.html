@@ -1,5 +1,5 @@
 <mat-card class="card" [@hoverState]="hover ? 'hovered' : 'default'" (mouseenter)="hover = true" (mouseleave)="hover = false">
-    <img class="card-image" mat-card-image [src]='img | defaultImage' (error)="img = '../../../assets/images/default.avif'" alt="Photo of a Shiba Inu">
+    <img class="card-image" mat-card-image [src]='img | defaultImage' alt="Photo of a Shiba Inu">
     <mat-card-header>
       <mat-card-title>{{ item.title }}</mat-card-title>
       
@@ -11,7 +11,7 @@
             <span>Creado: {{ item.creationAt | formatDate: 3  }}</span>        
         </mat-card-subtitle>
         
-        <h3 style="margin: 5px; float: right;">{{ item.price }} €</h3>
+        <h3 style="margin: 5px; float: right;">{{ item.price | currency:'EUR' }}</h3>
         <p style="margin-bottom: 5px;">Categorias:</p>
         <button class="btn-categorias" mat-raised-button [routerLink]="['/categoria', item.category.id ]">
             {{ item.category.name }}

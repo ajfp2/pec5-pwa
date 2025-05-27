@@ -13,25 +13,25 @@
                 <div class="col-6">
                     <div class="product-image">
                         <div class="product-image-main">
-                            <img [src]='imageMain | defaultImage' (error)="imageMain = '../../../assets/images/default.avif'" alt="image detail producto" id="product-main-image">
+                            <img [src]='imageMain | defaultImage' alt="image detail producto" id="product-main-image">
                         </div>
                         <div class="product-image-slider">
-                            <img [src]='img' alt="imagen miniatura" class="image-list" *ngFor="let img of product.images" (click)="changeMainImage(img);">
+                            <img [src]='img | defaultImage' alt="imagen miniatura" class="image-list" *ngFor="let img of product.images" (click)="changeMainImage(img);">
                         </div>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="product">
                         <div class="product-title">
-                            <h2>{{ product.title }}</h2>
+                            <h2>{{ product.title | uppercase }}</h2>
                         </div>
                         <div class="product-rating">
                             <app-star-rating [rating]="valor_rating"></app-star-rating>
                             <span class="review">({{ valor_rating }} / 5 Rating)</span>
                         </div>
                         <div class="product-price">
-                            <span class="offer-price">{{ product.price }} €</span>
-                            <span class="sale-price">{{ calcularIncremento(product.price) }} €</span>
+                            <span class="offer-price">{{ product.price | currency: 'EUR': 'symbol': '1.2-2' }}</span>
+                            <span class="sale-price">{{ calcularIncremento(product.price) | currency: 'EUR': 'symbol': '1.2-2' }}</span>
                         </div>
 
                         <div class="product-btn-group">
@@ -44,29 +44,41 @@
                                 Añadir a Lista de Deseos
                             </button>
                         </div>
-                        <mat-divider></mat-divider>
-                        <div class="product-details">
-                            <h3>Descripción</h3>
-                            <p>{{ product.description }}</p>
-                            <h3>Añadido a la tienda:<small style="float: right;">{{ product.creationAt | formatDate:3 }}</small></h3>
-                            
-                        </div>
 
-                        <div class="product-category">
-                            <h4>Categoría:</h4>
-                            <div class="category-layout">
-                                <button mat-raised-button>{{ product.category.name }}</button>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <mat-expansion-panel [expanded]="isOpen">
+
+                            <mat-expansion-panel-header>
+                                <mat-panel-title class="titlePanel">Ver Todos los Detalles <mat-icon>keyboard_arrow_down</mat-icon></mat-panel-title>
+                            </mat-expansion-panel-header>
+
+                            <div class="product-details">
+                                <h3>Descripción</h3>
+                                <p>{{ product.description }}</p>
+                                <h3>Añadido a la tienda:<small style="float: right;">{{ product.creationAt | formatDate:3 }}</small></h3>
                             </div>
-                            <h4>Valorar el Producto (0-100): {{slider.value}} Puntos</h4>
-                            <mat-slider class="slider-margin"
-                                [max]="100"
-                                [min]="0"
-                                [step]="1"
-                                [discrete]="true">
-                                <input matSliderThumb [value]="valor_slider" #slider>
-                            </mat-slider>
-                            <button mat-raised-button color="primary" (click)="calcularValoracion(+slider.value);">Enviar</button>
-                        </div>                                 
+
+                            <div class="product-category">
+                                <h4>Categoría:</h4>
+                                <div class="category-layout">
+                                    <button mat-raised-button>{{ product.category.name }}</button>
+                                </div>
+                                <h4>Valorar el Producto (0-100): {{slider.value}} Puntos</h4>
+                                <mat-slider class="slider-margin"
+                                    [max]="100"
+                                    [min]="0"
+                                    [step]="1"
+                                    [discrete]="true">
+                                    <input matSliderThumb [value]="valor_slider" #slider>
+                                </mat-slider>
+                                <button mat-raised-button color="primary" (click)="calcularValoracion(+slider.value);">Enviar</button>
+                            </div>
+
+                        </mat-expansion-panel>
+
+                        
+
                     </div>
                 </div>
             </div>

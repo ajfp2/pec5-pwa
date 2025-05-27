@@ -21,6 +21,9 @@ export class ProductDetailComponent implements OnInit{
   public valor_slider = 50;
   public valor_rating = 0;
 
+  //panel
+  isOpen: boolean = false;
+
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private ps: ProductService, private loc: Location) {
     this.idProduct = this.activatedRoute.snapshot.paramMap.get('id');
     this.product = new ProductDTO('', '', 0, '', new CategoryDTO('', '', ''), new Date(), []);

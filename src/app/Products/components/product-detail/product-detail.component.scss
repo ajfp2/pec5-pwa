@@ -7,6 +7,17 @@ $grey:#484848;
 $bg-grey: #efefef;
 $shadow: #949494;
 
+.mat-expansion-panel{
+    background-color: #ffffff;
+    color: $grey;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0, 0.3);
+}
+
+.titlePanel {
+    color: #000000 !important;
+    font-weight: 500;
+}
+
 
 .container-detail{
     margin: 5vh auto;

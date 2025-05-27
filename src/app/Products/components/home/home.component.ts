@@ -11,8 +11,8 @@ import { LoaderService } from '../../../shared/services/loader.service';
 })
 export class HomeComponent {
 
-  valor1: number = 5;
-  valor2: number = 15000;
+  valor1: number = 0;
+  valor2: number = 3000;
   prodTopVentas: ProductDTO[];
   customers: any[];
 

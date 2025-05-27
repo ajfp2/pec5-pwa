@@ -9,6 +9,7 @@ import { GridComponent } from './components/grid/grid.component';
 import { CardCategoryComponent } from './components/card-category/card-category.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import { GridCategoryComponent } from './components/grid-category/grid-category.component';
 
 // Pipes
 import { FormatDatePipe } from './Pipes/format-date.pipe';
@@ -25,7 +26,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
-import { GridCategoryComponent } from './components/grid-category/grid-category.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { GridCategoryComponent } from './components/grid-category/grid-category.
     MatChipsModule,
     MatMenuModule,
     MatTableModule,
+    MatBadgeModule,
     MatProgressSpinnerModule,
     RouterLink,
     RouterLinkActive,
