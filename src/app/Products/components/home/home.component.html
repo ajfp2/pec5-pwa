@@ -8,7 +8,7 @@
         <mat-list class="itemList">
 
             <mat-list-item *ngFor="let cli of customers">
-                <img class="itemList__avatar" matListItemAvatar  [src]="cli.avatar | defaultImage" alt="Avatar Usuario">
+                <img class="itemList__avatar" matListItemAvatar  [src]="cli.avatar | defaultImage" loading="lazy" alt="Avatar Usuario">
                 <h3 class="itemList__title" matListItemLine>{{cli.name}}</h3>
                 <p class="itemList__text" matListItemLine>{{cli.email}}</p>
                 <mat-divider></mat-divider>
@@ -20,7 +20,7 @@
 
 
     <div class="topVentas">
-        <h2 class="text-center">Productos desde {{ valor1 }}€ hasta {{ valor2}} €</h2>
+        <h2 class="text-center">Productos desde {{ valor1 }}€ hasta {{ valor2 }} €</h2>
         <div class="grid-cards" *ngIf="ls.getMode() == 'card'">
             <div *ngFor="let pr of prodTopVentas;">
                 <app-card

@@ -2,20 +2,11 @@
   <button mat-icon-button (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-    <span>UOC ECOMMERCE PWA</span>
+    <span>UOC ECOMMERCE</span>
   <span class="example-spacer"></span>
 
-  
-  <button mat-icon-button>
-    <mat-icon>favorite</mat-icon>
-  </button>
-
-  <button mat-icon-button>
-    <mat-icon>shopping_cart</mat-icon>
-  </button>
-
   <button mat-button [matMenuTriggerFor]="viewMode" title="Select a view mode">
-    Vista: {{ mode }}
+    Vista: {{ vista }}
     <mat-icon role="img" class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">arrow_drop_down</mat-icon>
   </button>
   <mat-menu #viewMode="matMenu">
@@ -25,7 +16,7 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav mode="side" opened #sidenav>
+  <mat-sidenav mode="side" closed #sidenav>
     <mat-nav-list appNavListKeyManager>
       @for (item of navItems; track item) {
       <a

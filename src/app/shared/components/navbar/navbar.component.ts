@@ -9,7 +9,7 @@ import { LoaderService } from '../../services/loader.service';
 })
 export class NavbarComponent {
 
-  public mode: string;
+  public vista: string;
   public navItems = [
     {
       title: 'Dashboard',
@@ -29,7 +29,7 @@ export class NavbarComponent {
   ];
 
   constructor(private router: Router, private ls: LoaderService) {
-    this.mode = this.ls.getMode();
+    this.vista = this.ls.getMode();
   }
 
   navigateTo(ruta: string): void {
@@ -37,7 +37,7 @@ export class NavbarComponent {
   }
 
   changeMode(mode: string): void {
-    this.mode = mode;
+    this.vista = mode;
     this.ls.setMode(mode);
   }
 }

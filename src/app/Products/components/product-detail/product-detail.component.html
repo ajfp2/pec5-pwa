@@ -13,10 +13,10 @@
                 <div class="col-6">
                     <div class="product-image">
                         <div class="product-image-main">
-                            <img [src]='imageMain | defaultImage' alt="image detail producto" id="product-main-image">
+                            <img [src]='imageMain | defaultImage' alt="image detail producto" id="product-main-image" loading="lazy">
                         </div>
                         <div class="product-image-slider">
-                            <img [src]='img | defaultImage' alt="imagen miniatura" class="image-list" *ngFor="let img of product.images" (click)="changeMainImage(img);">
+                            <img [src]='img | defaultImage' alt="imagen miniatura" class="image-list" *ngFor="let img of product.images" (click)="changeMainImage(img);" loading="lazy">
                         </div>
                     </div>
                 </div>
