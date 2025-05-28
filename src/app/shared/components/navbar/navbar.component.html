@@ -2,7 +2,8 @@
   <button mat-icon-button (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-    <span>UOC ECOMMERCE</span>
+  <button mat-button (click)="sidenav.toggle()">UOC ECOMMERCE</button>
+    
   <span class="example-spacer"></span>
 
   <button mat-button [matMenuTriggerFor]="viewMode" title="Select a view mode">
@@ -16,7 +17,7 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav mode="side" closed #sidenav>
+  <mat-sidenav mode="side" opened #sidenav>
     <mat-nav-list appNavListKeyManager>
       @for (item of navItems; track item) {
       <a

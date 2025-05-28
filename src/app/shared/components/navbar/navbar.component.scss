@@ -15,7 +15,7 @@ mat-sidenav {
 
 mat-sidenav-content {  
   padding: 1.5rem;
-  @media (max-width: 768px) {
+  @media (max-width: $mqMaxWidth) {
 			padding: 0.7rem;
   }
 }
