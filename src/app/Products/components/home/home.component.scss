@@ -1,6 +1,14 @@
 $mqMaxWidth: 768px;
 $shadow: #f3f3f3;
 
+
+
+.title_h1{
+    font-size: 2.2em;
+    @media (max-width: $mqMaxWidth) {
+        font-size: 1.6em;
+    }
+}
 .text-center {
     text-align: center;
 }
