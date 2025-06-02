@@ -1,8 +1,8 @@
 {
-  "name": "Ecommerce-pwa",
-  "short_name": "Ecommerce-pwa",
+  "name": "UOC- Ecommerce PWA",
+  "short_name": "UOCEcommercePwa",
   "theme_color": "#7c1fa5",
-  "background_color": "#fafafa",
+  "background_color": "#e6e6e6",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

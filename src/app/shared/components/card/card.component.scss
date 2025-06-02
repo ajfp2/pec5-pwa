@@ -1,6 +1,6 @@
 .card {
-  max-width: 400px;
-  min-width: 300px;
+  max-width: 350px;
+  min-width: 250px;
   border-radius: 8px;
   border: none;
   box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
@@ -16,6 +16,8 @@
 
 .card-image {
   background-size: cover;
+  margin: 0 auto;
+  max-width: 350px;
   max-height: 300px;
 }
 

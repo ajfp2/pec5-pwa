@@ -1,5 +1,5 @@
 <mat-card class="card" [@hoverState]="hover ? 'hovered' : 'default'" (mouseenter)="hover = true" (mouseleave)="hover = false">
-    <img class="card-image" mat-card-image [src]='img | defaultImage' alt="Photo of a Shiba Inu" loading="lazy">
+    <img class="card-image" mat-card-image [src]='img | defaultImage' alt="Photo of a Shiba Inu" loading="lazy" width="350" height="300">
     <mat-card-header>
       <mat-card-title>{{ item.title }}</mat-card-title>
       
